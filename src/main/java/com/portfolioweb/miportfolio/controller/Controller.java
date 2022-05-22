@@ -5,6 +5,7 @@ import com.portfolioweb.miportfolio.service.IPersonaService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins="https://portfolioweb-9e852.web.app/")
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 public class Controller {
    
@@ -39,11 +40,13 @@ public class Controller {
       return persoServ.verPersona(id);
   }
   
+  @PreAuthorize("hasRole('ADMIN')")
   @DeleteMapping ("/delete/{id}")
   public void borrarPersona (@PathVariable Long id) {
       persoServ.borrarPersona(id);
   }
-      
+  
+  @PreAuthorize("hasRole('ADMIN')")
   @PutMapping ("/update/persona/{id}")
   public void editarPersona (@PathVariable ("id") Long id, @RequestBody Persona pers) {
      persoServ.editarPersona(pers);

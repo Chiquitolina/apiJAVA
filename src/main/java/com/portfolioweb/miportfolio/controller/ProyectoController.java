@@ -8,6 +8,7 @@ import com.portfolioweb.miportfolio.model.Proyecto;
 import com.portfolioweb.miportfolio.service.IProyectoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,14 +22,15 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author elcap
  */
-@CrossOrigin(origins="https://portfolioweb-9e852.web.app/")
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 public class ProyectoController {
     
     @Autowired
     public IProyectoService proServ;
-    
-     @PostMapping ("/new/proyecto")
+   
+  @PreAuthorize("hasRole('ADMIN')")  
+  @PostMapping ("/new/proyecto")
   public void agregarProyecto (@RequestBody Proyecto pro) {
       proServ.crearProyecto(pro);
   }
@@ -39,6 +41,7 @@ public class ProyectoController {
       return proServ.verProyectos();
   }
   
+  @PreAuthorize("hasRole('ADMIN')")
   @DeleteMapping ("/delete/proyecto/{id}")
   public void borrarProyecto (@PathVariable Long id) {
       proServ.borrarProyecto(id);

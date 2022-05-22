@@ -12,6 +12,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,14 +29,15 @@ import org.springframework.web.bind.annotation.RestController;
  * @author elcap
  */
 
-@CrossOrigin(origins="https://portfolioweb-9e852.web.app/")
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 public class SkillController {
    
   @Autowired
   public ISkillService skillServ;
   
-   @PostMapping ("/new/skill")
+  @PreAuthorize("hasRole('ADMIN')")
+  @PostMapping ("/new/skill")
   public void agregarSkill (@RequestBody Skill skil) {
       skillServ.crearSkill(skil);
   }
@@ -56,13 +58,14 @@ public class SkillController {
        return new ResponseEntity<Skill>(skill, HttpStatus.OK);
   }
   
-  
+  @PreAuthorize("hasRole('ADMIN')")
   @DeleteMapping ("/delete/skill/{id}")
   public void borrarSkill (@PathVariable Long id) {
       skillServ.borrarSkill(id);
   }
   
-    @PutMapping ("/update/skill/{id}")
+  @PreAuthorize("hasRole('ADMIN')")
+  @PutMapping ("/update/skill/{id}")
   public void editarSkill(@PathVariable ("id") Long id, @RequestBody Skill skil) {
      skillServ.editarSkill(skil);
   }
