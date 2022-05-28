@@ -5,6 +5,7 @@
 package com.portfolioweb.miportfolio.service;
 
 import com.portfolioweb.miportfolio.model.Proyecto;
+import com.portfolioweb.miportfolio.model.Skill;
 import com.portfolioweb.miportfolio.repository.ProyectoRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,11 @@ public class ProyectoService implements IProyectoService {
     @Override
     public void borrarProyecto(Long id) {
         proyServ.deleteById(id);
+    }
+
+    @Override
+    public void editarProyecto(Proyecto pro) {
+        proyServ.save(pro);
     }
     
 }

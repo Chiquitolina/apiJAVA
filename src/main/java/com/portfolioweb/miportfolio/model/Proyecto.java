@@ -25,16 +25,18 @@ public class Proyecto {
     private String nombre;
     private String descripcion;
     private String urlProyecto;
+    private String urlImagen;
     
     public Proyecto() {
     }
     
     public Proyecto(Long id, String nombre, String segundonombre, String descripcion,
-                   String urlProyecto) {
+                   String urlProyecto, String urlImagen) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.urlProyecto = urlProyecto;
+        this.urlImagen = urlImagen;
     }
 
     }

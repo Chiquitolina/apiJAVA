@@ -37,13 +37,14 @@ public class Persona {
     private String ciudad;
     private String contraseña;
     private String titulo;
+    private String aboutme;
    
     public Persona() {
     }
     
     public Persona(Long id, String nombre, String segundonombre, String apellido,
                    String contraseña, String email, String fechaNacimiento, String pais, 
-                   String provincia, String ciudad, String titulo) {
+                   String provincia, String ciudad, String titulo, String aboutme) {
         this.id = id;
         this.nombre = nombre;
         this.segundonombre = segundonombre;
@@ -55,6 +56,7 @@ public class Persona {
         this.provincia = provincia;
         this.ciudad = ciudad;
         this.titulo = titulo;
+        this.aboutme = aboutme;
     }
     
     }

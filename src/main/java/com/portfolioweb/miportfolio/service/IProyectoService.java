@@ -5,6 +5,7 @@
 package com.portfolioweb.miportfolio.service;
 
 import com.portfolioweb.miportfolio.model.Proyecto;
+import com.portfolioweb.miportfolio.model.Skill;
 import java.util.List;
 
 /**
@@ -15,4 +16,5 @@ public interface IProyectoService {
     public List<Proyecto> verProyectos();
     public void crearProyecto (Proyecto pro);
     public void borrarProyecto (Long id);
+    public void editarProyecto (Proyecto pro);
 }
