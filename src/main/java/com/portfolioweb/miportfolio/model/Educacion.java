@@ -27,20 +27,18 @@ public class Educacion {
     private String titulo;
     private String institucion;
     private String duracion;
-    private String urlCertificado;
     private String url_web_institucion;
     private String urlImagen;
     
     public Educacion() {
     }
     
-    public Educacion(Long id, String titulo, String institucion, String duracion, String urlCertificado, 
+    public Educacion(Long id, String titulo, String institucion, String duracion, 
             String url_web_institucion, String urlImagen) {
         this.id = id;
         this.titulo = titulo;
         this.institucion = institucion;
         this.duracion = duracion;
-        this.urlCertificado = urlCertificado;
         this.url_web_institucion = url_web_institucion;
         this.urlImagen = urlImagen;
     }
