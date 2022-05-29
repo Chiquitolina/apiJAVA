@@ -35,7 +35,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author elcap
+ * @author elcapd
  */
 @RestController
 @RequestMapping("/auth")
