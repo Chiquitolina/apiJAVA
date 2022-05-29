@@ -35,11 +35,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  *
- * @author elcapd
+ * @author elcap
  */
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins="https://portfolioweb-9e852.web.app")
+@CrossOrigin
 public class AuthController {
     
     @Autowired

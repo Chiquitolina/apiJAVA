@@ -25,14 +25,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 /**
- *ssdsds
+ *
  * @author elcap
  */
 
-@CrossOrigin(origins="https://portfolioweb-9e852.web.app")
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
-public class SkillController { 
-    
+public class SkillController {
    
   @Autowired
   public ISkillService skillServ;

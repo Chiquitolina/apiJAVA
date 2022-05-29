@@ -16,12 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
-//ggfgfgewewewewew
-
-
-@CrossOrigin(origins="https://portfolioweb-9e852.web.app")
-
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 public class Controller {
    
