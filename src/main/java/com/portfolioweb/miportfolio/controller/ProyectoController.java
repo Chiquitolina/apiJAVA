@@ -23,8 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author elcap
  */
-//@CrossOrigin(origins="https://portfolioweb-9e852.web.app")
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="https://portfolioweb-9e852.web.app")
 @RestController
 public class ProyectoController {
     
