@@ -21,14 +21,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- *
- * @author elcap
+ *gfgfdgfdgdgd
+ * @authodsewewewewer elcap
  */
-@CrossOrigin(origins="http://localhost:4200")
+@CrossOrigin(origins="https://portfolioweb-9e852.web.app")
 @RestController
 public class EducacionController {
     
     @Autowired
+    
     public IEducacionService eduServ;
     
   @PreAuthorize("hasRole('ADMIN')")
